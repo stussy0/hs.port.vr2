@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+input,
+button {
+  border: none;
+}
+
+input:focus {
+  outline: white;
+}
+
+body {
+  background-image: url(../images/noise_wh.gif);
+  font-family: "Roboto", sans-serif;
+  color: #d62527;
+}
+
+div {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+ol,
+ul,
+li {
+  padding-left: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#page-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.navigation-top,
+.navigation-bottom {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.navigation-top li,
+.navigation-bottom li {
+  font-size: 1.2rem;
+  margin: 2rem 2rem 0 0;
+}
+
+.navigation-top li:last-child,
+.navigation-bottom li:last-child {
+  margin-right: 2rem;
+}
+
+.navigation-top li:first-child,
+.navigation-bottom li:first-child {
+  margin-left: 2rem;
+}
+
+.navigation-bottom {
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+#main-container {
+  margin-bottom: 50vh;
+}
+
+#main-container::before {
+  content: "";
+  background: url("../images/stefano-pollio-ZC0EbdLC8G0-unsplash.gif")
+    center/cover fixed no-repeat;
+  filter: brightness(80%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.overlay-text {
+  margin-top: 23vh;
+  text-align: center;
+  font-size: 9.5rem;
+  line-height: 0.68;
+  font-weight: bold;
+  color: transparent;
+  backface-visibility: hidden;
+}
+
+.overlay-text span {
+  display: inline-block;
+  text-shadow: 0 0 0 #d62527;
+  animation: smoky 5s 2.8s both infinite alternate;
+}
+
+.overlay-text span:nth-child(even) {
+  animation-name: smoky-mirror;
+}
+
+@keyframes smoky {
+  60% {
+    text-shadow: 0 0 40px #d62527;
+  }
+  to {
+    transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg)
+      scale(1.5);
+    text-shadow: 0 0 20px #d62527;
+    opacity: 0;
+  }
+}
+
+@keyframes smoky-mirror {
+  60% {
+    text-shadow: 0 0 40px #d62527;
+  }
+  to {
+    transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg)
+      scale(2);
+    text-shadow: 0 0 20px #d62527;
+    opacity: 0;
+  }
+}
+
+@for $item from 1 through 21 {
+  #main-container .overlay-text span:nth-child(#{$item}) {
+    animation-delay: calc(#{$item} + 1s);
+  }
+}
+
+.heading {
+  width: 100vw;
+  text-align: center;
+  color: black;
+  padding-bottom: 17rem;
+  font-size: 25rem;
+}
+
+#projects {
+  padding-top: 14rem;
+}
+
+.my-project-container {
+  padding-bottom: 20rem;
+}
+
+.background-wrap {
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+  width: 1418px;
+  height: 814px;
+  overflow: hidden;
+}
+
+.background-wrap a {
+  display: block;
+  height: 100%;
+}
+
+.background-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  display: block;
+  transition: transform 0.2s linear;
+}
+
+.my-project-container:nth-child(2) .background-wrap::before {
+  background-image: url("../images/stefano-pollio-ZC0EbdLC8G0-unsplash\ copy.gif");
+}
+
+.my-project-container:nth-child(3) .background-wrap::before {
+  background-image: url("../images/bb-english.gif");
+}
+
+.my-project-container:nth-child(4) .background-wrap::before {
+  background-image: url("../images/Cadillac-Halo-Concept-InnerSpace-001.gif");
+}
+
+.my-project-container:nth-child(5) .background-wrap::before {
+  background-image: url("../images/palace-umbro-cover.gif");
+}
+
+.my-project-container:nth-child(6) .background-wrap::before {
+  background-image: url("../images/pro-m-b.gif");
+}
+
+.background-wrap:hover::before {
+  transform: scale(1.4);
+}
+
+.content {
+  display: flex;
+  z-index: 1;
+  position: relative;
+  color: #fff;
+  padding-left: 30px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.my-project-container:hover .background-wrap::before {
+  transform: scale(1.4);
+}
+
+.content span:nth-child(1) {
+  color: #d62527;
+  font-size: 11rem;
+  font-weight: bold;
+  letter-spacing: -15px;
+}
+
+.content span:nth-child(2) {
+  color: white;
+  font-size: 1.4rem;
+  padding-bottom: 20px;
+}
+
+.content span:nth-child(3) {
+  color: white;
+  padding-bottom: 30px;
+}
+
+#about-container {
+  padding-top: 14rem;
+  width: 100vw;
+  color: black;
+  margin-bottom: 32rem;
+}
+
+.ab-main-content {
+  margin: 0 auto;
+  width: 70vw;
+  margin-top: 4rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ab-img-intro {
+  display: flex;
+}
+
+.ab-img-intro > img {
+  width: 30vw;
+  float: left;
+}
+
+.ab-intro {
+  font-size: 2.6rem;
+  padding: 31rem 0 0 5rem;
+}
+
+.ab-text {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary {
+  font-size: 1.8rem;
+}
+
+.ab-text-in-ko,
+.ab-text-in-en {
+  width: 35vw;
+  padding-top: 2rem;
+}
+
+.ab-text-in-en {
+  font-weight: 100;
+}
+
+#contact {
+  width: 100vw;
+  height: 39vh;
+  filter: url(#threshold) blur(0.6px);
+  padding-top: 15rem;
+  overflow: hidden;
+}
+
+#text1,
+#text2 {
+  width: 100%;
+  display: inline-block;
+  color: black;
+  font-weight: 600;
+  font-size: 23rem;
+  text-align: center;
+  user-select: none;
+}
+
+.contact-message {
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+
+.contact-message p {
+  color: #d62527;
+  position: relative;
+  font-weight: 600;
+  font-size: 23rem;
+  text-align: center;
+  letter-spacing: -30px;
+}
+
+.contact-message a {
+  position: absolute;
+  right: 11%;
+  font-size: 1.5rem;
+  color: black;
+  z-index: 1;
+}
