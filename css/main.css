@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+/* Prevent font scaling in landscape */
+html {
+  -webkit-text-size-adjust: none; /*Chrome, Safari, newer versions of Opera*/
+  -moz-text-size-adjust: none; /*Firefox*/
+  -ms-text-size-adjust: none; /*Ie*/
+  -o-text-size-adjust: none; /*old versions of Opera*/
+}
+
 img {
   border: 0;
 }
@@ -23,6 +31,7 @@ input:focus {
 
 body {
   background-image: url(../images/noise_wh.gif);
+  font-size: 10px;
   font-family: "Roboto", sans-serif;
   color: #d62527;
 }
@@ -250,6 +259,7 @@ a {
   display: flex;
   z-index: 1;
   position: relative;
+  font-size: 1.2rem;
   color: #fff;
   padding-left: 30px;
   height: 100%;
@@ -283,7 +293,7 @@ a {
   padding-top: 14rem;
   width: 100vw;
   color: black;
-  margin-bottom: 32rem;
+  margin-bottom: 12rem;
 }
 
 .ab-main-content {
@@ -296,6 +306,8 @@ a {
 
 .ab-img-intro {
   display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .ab-img-intro > img {
@@ -305,7 +317,19 @@ a {
 
 .ab-intro {
   font-size: 2.6rem;
-  padding: 31rem 0 0 5rem;
+  padding: 0 8rem 11rem 0;
+}
+
+.my-service {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+  font-weight: normal;
+}
+
+.service-heading {
+  padding-right: 5rem;
 }
 
 .ab-text {
